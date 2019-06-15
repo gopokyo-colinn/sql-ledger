@@ -1861,7 +1861,7 @@ sub update_payroll {
           if (($ref->{trans_id} == $ed->{id}) && $ok) {
             $fromwithholding = 0;
             $fromincome = 0;
-            $form->{"deduct_$i"} = $ref->{amount};
+            $form->{"deduct_$i"} = $ref->{amount} / $form->{payperiod};
 
             $j = 0;
             for (@{ $form->{deduct}{$ref->{trans_id}} }) {
